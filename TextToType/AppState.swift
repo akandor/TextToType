@@ -13,9 +13,9 @@ enum ClipboardClearing: String, CaseIterable, Identifiable {
 
     var title: String {
         switch self {
-        case .never: "Never"
-        case .passwords: "Only passwords"
-        case .always: "Always"
+        case .never: String(localized: "Never")
+        case .passwords: String(localized: "Only passwords")
+        case .always: String(localized: "Always")
         }
     }
 }
@@ -149,9 +149,9 @@ final class AppState: ObservableObject {
         }
         let status = hotKeys.register(shortcut)
         if status == OSStatus(eventHotKeyExistsErr) {
-            hotKeyError = "That shortcut is already used by another app."
+            hotKeyError = String(localized: "That shortcut is already used by another app.")
         } else if status != noErr {
-            hotKeyError = "Couldn't register the shortcut (error \(status))."
+            hotKeyError = String(localized: "Couldn't register the shortcut (error \(status)).")
         }
     }
 
@@ -189,15 +189,15 @@ final class AppState: ObservableObject {
     /// Explains the missing permission instead of silently jumping to System Settings.
     private func showAccessibilityAlert() {
         let alert = NSAlert()
-        alert.messageText = "TextToType needs Accessibility access"
-        alert.informativeText = """
+        alert.messageText = String(localized: "TextToType needs Accessibility access")
+        alert.informativeText = String(localized: """
         Turn on TextToType in System Settings → Privacy & Security → Accessibility.
 
         If it's already turned on there, that entry belongs to an older build of the app. \
         Select it, remove it with the − button, then add this copy again (or turn it on when prompted).
-        """
-        alert.addButton(withTitle: "Open System Settings")
-        alert.addButton(withTitle: "Cancel")
+        """)
+        alert.addButton(withTitle: String(localized: "Open System Settings"))
+        alert.addButton(withTitle: String(localized: "Cancel"))
         NSApp.activate()
         if alert.runModal() == .alertFirstButtonReturn {
             requestAccessibility()

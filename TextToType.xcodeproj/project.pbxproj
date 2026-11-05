@@ -12,6 +12,7 @@
 		341A99A6BCBA7C5E9AAC6473 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACDF48D907EFF6499163554 /* Shortcut.swift */; };
 		8FCBD1CBAFAAE2CCFB2196F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DD22BD2096DB86DBEED033 /* Assets.xcassets */; };
 		A3AF239B556E66E403E11994 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7290F8A28131C90C7B4A1B /* AppState.swift */; };
+		C64E5F2B309C8511005D831E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C64E5F2A309C8511005D831E /* Localizable.xcstrings */; };
 		D969AFB8C71697FE040D6305 /* HotKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BB7BDAD77A173588EB856D /* HotKeyManager.swift */; };
 		E137AAC32CCAE2759C46D8C9 /* TextToTypeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D74C2FF6EA5F4310CCFEFD /* TextToTypeApp.swift */; };
 		E1CF994EB5EE99BFB8C58B11 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = AA14267FA0514C24DE262A2D /* AppIcon.icon */; };
@@ -28,6 +29,7 @@
 		A6DD22BD2096DB86DBEED033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA14267FA0514C24DE262A2D /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		B8D74C2FF6EA5F4310CCFEFD /* TextToTypeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToTypeApp.swift; sourceTree = "<group>"; };
+		C64E5F2A309C8511005D831E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		C6BB7BDAD77A173588EB856D /* HotKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotKeyManager.swift; sourceTree = "<group>"; };
 		FEC51779B30A9ED922D0D474 /* KeyboardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +64,7 @@
 				670E95D9015F14C822B7A731 /* TextToType.entitlements */,
 				B8D74C2FF6EA5F4310CCFEFD /* TextToTypeApp.swift */,
 				27356D6CC467705BAC8A577D /* Typer.swift */,
+				C64E5F2A309C8511005D831E /* Localizable.xcstrings */,
 			);
 			path = TextToType;
 			sourceTree = "<group>";
@@ -108,6 +111,7 @@
 			knownRegions = (
 				Base,
 				en,
+				de,
 			);
 			mainGroup = A1B61262170665D84660070C;
 			minimizedProjectReferenceProxies = 1;
@@ -128,6 +132,7 @@
 			files = (
 				E1CF994EB5EE99BFB8C58B11 /* AppIcon.icon in Resources */,
 				8FCBD1CBAFAAE2CCFB2196F8 /* Assets.xcassets in Resources */,
+				C64E5F2B309C8511005D831E /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +243,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -323,6 +329,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
 			name = Release;
 		};

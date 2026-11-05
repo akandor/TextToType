@@ -11,7 +11,7 @@ final class SettingsWindowController: NSObject, NSWindowDelegate {
         if window == nil {
             let hosting = NSHostingController(rootView: SettingsView().environmentObject(AppState.shared))
             let window = NSWindow(contentViewController: hosting)
-            window.title = "TextToType Settings"
+            window.title = String(localized: "TextToType Settings")
             window.styleMask = [.titled, .closable]
             window.isReleasedWhenClosed = false
             window.delegate = self
@@ -153,7 +153,9 @@ struct ShortcutRecorder: View {
     var body: some View {
         HStack(spacing: 6) {
             Button(action: toggleRecording) {
-                Text(isRecording ? "Press shortcut…" : (shortcut?.displayString ?? "Record Shortcut"))
+                Text(isRecording
+                     ? String(localized: "Press shortcut…")
+                     : shortcut?.displayString ?? String(localized: "Record Shortcut"))
                     .frame(minWidth: 120)
             }
             .help(isRecording ? "Press Esc to cancel" : "Click to record a new shortcut")

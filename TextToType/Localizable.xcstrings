@@ -1,0 +1,438 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "“Only passwords” clears text that a password manager marked as a password. The clipboard is left alone if you copied something else while typing, or if you stopped typing early." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„Nur Passwörter“ löscht Text, den ein Passwort-Manager als Passwort markiert hat. Die Zwischenablage bleibt unberührt, wenn du während der Eingabe etwas anderes kopiert hast oder die Eingabe vorzeitig abgebrochen hast."
+          }
+        }
+      }
+    },
+    "%lld ms" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ms"
+          }
+        }
+      }
+    },
+    "⚠️ Grant Accessibility Access…" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "⚠️ Zugriff auf Bedienungshilfen gewähren…"
+          }
+        }
+      }
+    },
+    "Accessibility access granted" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Zugriff auf Bedienungshilfen erteilt"
+          }
+        }
+      }
+    },
+    "Accessibility access is required to type" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Zum Eintippen ist Zugriff auf die Bedienungshilfen erforderlich"
+          }
+        }
+      }
+    },
+    "Already turned on in System Settings? That entry is from an older build. Remove it with − and add this app again." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Bereits in den Systemeinstellungen aktiviert? Dieser Eintrag stammt von einer älteren Version. Entferne ihn mit „−“ und füge diese App erneut hinzu."
+          }
+        }
+      }
+    },
+    "Always" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Immer"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Abbrechen"
+          }
+        }
+      }
+    },
+    "Clear clipboard after typing" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zwischenablage nach der Eingabe löschen"
+          }
+        }
+      }
+    },
+    "Clear shortcut" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tastenkombination löschen"
+          }
+        }
+      }
+    },
+    "Click to record a new shortcut" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Klicke, um eine neue Tastenkombination aufzunehmen"
+          }
+        }
+      }
+    },
+    "Couldn't register the shortcut (error %d)." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Die Tastenkombination konnte nicht registriert werden (Fehler %d)."
+          }
+        }
+      }
+    },
+    "Delay per key" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verzögerung pro Taste"
+          }
+        }
+      }
+    },
+    "General" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Allgemein"
+          }
+        }
+      }
+    },
+    "Grant Access…" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zugriff gewähren…"
+          }
+        }
+      }
+    },
+    "Increase this if the target app (e.g. a remote desktop or VM) drops characters." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erhöhe diesen Wert, wenn die Zielanwendung (z. B. ein Remote-Desktop oder eine virtuelle Maschine) Zeichen auslässt."
+          }
+        }
+      }
+    },
+    "Key %u" : {
+      "comment" : "Shortcut display for a key without a name",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Taste %u"
+          }
+        }
+      }
+    },
+    "Launch at login" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bei der Anmeldung starten"
+          }
+        }
+      }
+    },
+    "Launch at Login" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bei der Anmeldung starten"
+          }
+        }
+      }
+    },
+    "Needs approval in System Settings." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muss in den Systemeinstellungen genehmigt werden."
+          }
+        }
+      }
+    },
+    "Never" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Nie"
+          }
+        }
+      }
+    },
+    "Only passwords" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Nur Passwörter"
+          }
+        }
+      }
+    },
+    "Open Login Items…" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anmeldeobjekte öffnen…"
+          }
+        }
+      }
+    },
+    "Open System Settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Systemeinstellungen öffnen"
+          }
+        }
+      }
+    },
+    "Permissions" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Berechtigungen"
+          }
+        }
+      }
+    },
+    "Press Esc to cancel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drücke die Esc-Taste, um den Vorgang abzubrechen"
+          }
+        }
+      }
+    },
+    "Press shortcut…" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tastenkombination drücken…"
+          }
+        }
+      }
+    },
+    "Press the shortcut to type the clipboard into the focused app. Press it again to stop." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Drücke die Tastenkombination, um den Inhalt der Zwischenablage in die aktive App einzutippen. Drücke sie erneut, um den Vorgang zu beenden."
+          }
+        }
+      }
+    },
+    "Quit TextToType" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TextToType beenden"
+          }
+        }
+      }
+    },
+    "Record Shortcut" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tastenkombination aufnehmen"
+          }
+        }
+      }
+    },
+    "Settings…" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen…"
+          }
+        }
+      }
+    },
+    "Shortcut" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastenkombination"
+          }
+        }
+      }
+    },
+    "Space" : {
+      "comment" : "Name of the space bar in shortcuts",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Leertaste"
+          }
+        }
+      }
+    },
+    "Stop Typing" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Eingabe stoppen"
+          }
+        }
+      }
+    },
+    "TextToType is free and open source." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TextToType ist kostenlos und Open Source."
+          }
+        }
+      }
+    },
+    "TextToType needs Accessibility access" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "TextToType benötigt Zugriff auf die Bedienungshilfen"
+          }
+        }
+      }
+    },
+    "TextToType Settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "TextToType-Einstellungen"
+          }
+        }
+      }
+    },
+    "That shortcut is already used by another app." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Diese Tastenkombination wird bereits von einer anderen App verwendet."
+          }
+        }
+      }
+    },
+    "Turn on TextToType in System Settings → Privacy & Security → Accessibility.\n\nIf it's already turned on there, that entry belongs to an older build of the app. Select it, remove it with the − button, then add this copy again (or turn it on when prompted)." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Aktiviere TextToType unter Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen.\n\nWenn TextToType dort bereits aktiviert ist, gehört dieser Eintrag zu einer älteren Version der App. Wähle ihn aus, entferne ihn mit der Taste „−“ und füge diese Kopie erneut hinzu (oder aktiviere sie, wenn du dazu aufgefordert wirst)."
+          }
+        }
+      }
+    },
+    "Type Clipboard" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Zwischenablage eintippen"
+          }
+        }
+      }
+    },
+    "Typing" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippen"
+          }
+        }
+      }
+    },
+    "Version %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %@"
+          }
+        }
+      }
+    },
+    "View on GitHub" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf GitHub anzeigen"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.3"
+}

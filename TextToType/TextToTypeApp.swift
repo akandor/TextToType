@@ -75,8 +75,8 @@ struct MenuContent: View {
 
     private var typeTitle: String {
         if let shortcut = state.shortcut {
-            return "Type Clipboard   \(shortcut.displayString)"
+            return String(localized: "Type Clipboard") + "   " + shortcut.displayString
         }
-        return "Type Clipboard"
+        return String(localized: "Type Clipboard")
     }
 }
