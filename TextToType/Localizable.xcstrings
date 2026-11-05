@@ -25,7 +25,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "⚠️ Zugriff auf Bedienungshilfen gewähren…"
           }
         }
@@ -35,7 +35,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Zugriff auf Bedienungshilfen erteilt"
           }
         }
@@ -45,7 +45,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Zum Eintippen ist Zugriff auf die Bedienungshilfen erforderlich"
           }
         }
@@ -55,7 +55,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Bereits in den Systemeinstellungen aktiviert? Dieser Eintrag stammt von einer älteren Version. Entferne ihn mit „−“ und füge diese App erneut hinzu."
           }
         }
@@ -65,7 +65,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Immer"
           }
         }
@@ -75,7 +75,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Abbrechen"
           }
         }
@@ -95,7 +95,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Tastenkombination löschen"
           }
         }
@@ -105,7 +105,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Klicke, um eine neue Tastenkombination aufzunehmen"
           }
         }
@@ -115,7 +115,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Die Tastenkombination konnte nicht registriert werden (Fehler %d)."
           }
         }
@@ -166,7 +166,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Taste %u"
           }
         }
@@ -206,7 +206,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Nie"
           }
         }
@@ -216,7 +216,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Nur Passwörter"
           }
         }
@@ -236,7 +236,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Systemeinstellungen öffnen"
           }
         }
@@ -266,7 +266,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Tastenkombination drücken…"
           }
         }
@@ -276,7 +276,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Drücke die Tastenkombination, um den Inhalt der Zwischenablage in die aktive App einzutippen. Drücke sie erneut, um den Vorgang zu beenden."
           }
         }
@@ -296,7 +296,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Tastenkombination aufnehmen"
           }
         }
@@ -327,7 +327,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Leertaste"
           }
         }
@@ -337,7 +337,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Eingabe stoppen"
           }
         }
@@ -357,7 +357,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "TextToType benötigt Zugriff auf die Bedienungshilfen"
           }
         }
@@ -367,7 +367,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "TextToType-Einstellungen"
           }
         }
@@ -377,7 +377,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Diese Tastenkombination wird bereits von einer anderen App verwendet."
           }
         }
@@ -387,7 +387,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Aktiviere TextToType unter Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen.\n\nWenn TextToType dort bereits aktiviert ist, gehört dieser Eintrag zu einer älteren Version der App. Wähle ihn aus, entferne ihn mit der Taste „−“ und füge diese Kopie erneut hinzu (oder aktiviere sie, wenn du dazu aufgefordert wirst)."
           }
         }
@@ -397,7 +397,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Zwischenablage eintippen"
           }
         }
