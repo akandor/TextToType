@@ -94,8 +94,8 @@ Upload these to the Italian localization. They're 2880 × 1800 (16:10), like the
 
 | File | Shows |
 | --- | --- |
-| `Screenshots/it/01-type-anywhere.png` | Hero image: menu bar menu and text being typed into a remote session |
-| `Screenshots/it/02-settings.png` | Settings: shortcut, typing speed, clipboard clearing, launch at login |
+| `Screenshots/it/01-type-anywhere.png` | Hero image: menu bar menu (with Type for) and text being typed into a remote session |
+| `Screenshots/it/02-settings.png` | Settings, Typing tab: Type for, typing speed, clipboard clearing |
 
 The sources are `screenshot-src/*.it.html`. To re-render them, run this from the project folder:
 

@@ -20,8 +20,8 @@
 
   /* Settings window, drawn at its real size and scaled up for legibility */
   .settings {
-    left: 770px; top: 95px; width: 460px;
-    transform: scale(1.32); transform-origin: top left;
+    left: 770px; top: 450px; width: 460px;
+    transform: scale(1.32) translateY(-50%); transform-origin: top left; /* vertically centred */
     background: #1f1f21;
   }
   .settings .titlebar { background: #2a2a2c; height: 34px; border-bottom-color: #161617; }
@@ -66,6 +66,19 @@
 
   .perm { display: flex; align-items: center; gap: 8px; }
   .perm .ok { width: 16px; height: 16px; border-radius: 50%; background: #30d158; color: #fff; font-size: 10px; font-weight: 900; display: grid; place-items: center; }
+
+  /* toolbar-style tabs, as in the app's Settings window */
+  .settings .chrome { background: #2a2a2c; border-bottom: 1px solid #161617; }
+  .chrome .bar { position: relative; height: 30px; display: flex; align-items: center; gap: 8px; padding: 0 10px; }
+  .chrome .bar i { width: 12px; height: 12px; border-radius: 50%; display: block; background: #4a4a4d; }
+  .chrome .bar i:first-child { background: #ff5f57; }
+  .chrome .bar .title { position: absolute; left: 0; right: 0; text-align: center; font-size: 13px; font-weight: 700; color: #dcdcdf; }
+  .tabs { display: flex; justify-content: center; gap: 2px; padding: 0 0 7px; }
+  .tab { min-width: 55px; padding: 5px 8px 4px; border-radius: 7px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 11px; color: #bdbdc2; white-space: nowrap; }
+  .tab svg { width: 20px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+  .tab.on { background: rgba(255,255,255,.1); color: #0a84ff; }
+  .group + .group { margin-top: 12px; }
+  .popup { white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -75,45 +88,38 @@
     <h1>Your shortcut.<br>Your speed.</h1>
     <ul class="features">
       <li><div class="ic">⌘</div><div><b>Any global shortcut</b><span>Record the key combo that suits you, and press it again to stop.</span></div></li>
+      <li><div class="ic"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8.5"/><path d="M2.5 11h17M11 2.5c2.6 2.4 3.9 5.2 3.9 8.5s-1.3 6.1-3.9 8.5c-2.6-2.4-3.9-5.2-3.9-8.5s1.3-6.1 3.9-8.5z"/></svg></div><div><b>Works with any system</b><span>Types as Unicode text, or as real key presses for a Mac or a Windows PC.</span></div></li>
       <li><div class="ic">⏱</div><div><b>Adjustable typing speed</b><span>Slow it down for laggy remote sessions and VMs.</span></div></li>
       <li><div class="ic"><svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true"><rect x="2" y="9" width="16" height="12" rx="3" fill="currentColor"/><path d="M5.5 9V6.5a4.5 4.5 0 0 1 9 0V9" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></div><div><b>Password-manager friendly</b><span>Clears copied passwords from the clipboard once they're typed.</span></div></li>
-      <li><div class="ic">↻</div><div><b>Always ready</b><span>Lives in the menu bar and launches at login.</span></div></li>
     </ul>
   </div>
 
   <div class="window settings">
-    <div class="titlebar"><i></i><i></i><i></i><div class="title">TextToType Settings</div></div>
+    <div class="chrome">
+      <div class="bar"><i></i><i></i><i></i><div class="title">Typing</div></div>
+      <div class="tabs"><div class="tab"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6.2" stroke-width="2.6" stroke-dasharray="2.4 2.47"/><circle cx="10" cy="10" r="4.4"/><circle cx="10" cy="10" r="1.7"/></svg><span>General</span></div><div class="tab on"><svg viewBox="0 0 22 16"><rect x="1" y="2" width="20" height="12" rx="2.5"/><path d="M5 6h1M8.3 6h1M11.6 6h1M15 6h1M5 9h1M8.3 9h1M11.6 9h1M15 9h1M7 12h8" stroke-linecap="round"/></svg><span>Typing</span></div><div class="tab"><svg viewBox="0 0 20 20"><path d="M10 1.8 3.5 4.3v5c0 4.2 2.8 7.4 6.5 8.9 3.7-1.5 6.5-4.7 6.5-8.9v-5z"/><rect x="7.2" y="9" width="5.6" height="4.4" rx="1" fill="currentColor" stroke="none"/><path d="M8.3 9V7.6a1.7 1.7 0 0 1 3.4 0V9"/></svg><span>Permissions</span></div><div class="tab"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><path d="M10 9v5" stroke-linecap="round"/><circle cx="10" cy="6.2" r=".6" fill="currentColor"/></svg><span>About</span></div></div>
+    </div>
     <div class="form">
       <div class="group">
         <div class="row with-caption">
-          <span>Shortcut</span>
-          <div class="recorder"><div class="btn">⌃⌥⌘V</div><div class="x">✕</div></div>
+          <span>Type for</span>
+          <div class="popup">Any system (Unicode)<div class="chev">▴<br>▾</div></div>
         </div>
-        <div class="caption">Press the shortcut to type the clipboard into the focused app. Press it again to stop.</div>
+        <div class="caption">Sends each character as text instead of a key press, so the keyboard layout doesn't matter. Works in Mac apps and in remote clients that pass text on. VMs, consoles and installer screens may type nothing or wrong letters.</div>
       </div>
-
-      <div class="section-title">Typing</div>
       <div class="group">
         <div class="row with-caption">
           <span>Delay per key</span>
           <div class="slider"><div class="track"><div class="fill"></div><div class="knob"></div></div><span class="ms">15 ms</span></div>
         </div>
         <div class="caption">Increase this if the target app (e.g. a remote desktop or VM) drops characters.</div>
+      </div>
+      <div class="group">
         <div class="row with-caption">
           <span>Clear clipboard after typing</span>
           <div class="popup">Only passwords<div class="chev">▴<br>▾</div></div>
         </div>
         <div class="caption">“Only passwords” clears text that a password manager marked as a password. The clipboard is left alone if you copied something else while typing, or if you stopped typing early.</div>
-      </div>
-
-      <div class="section-title">General</div>
-      <div class="group">
-        <div class="row"><span>Launch at login</span><div class="toggle"></div></div>
-      </div>
-
-      <div class="section-title">Permissions</div>
-      <div class="group">
-        <div class="row"><div class="perm"><div class="ok">✓</div>Accessibility access granted</div></div>
       </div>
     </div>
   </div>

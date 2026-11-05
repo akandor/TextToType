@@ -92,8 +92,8 @@ Upload these to the German localization. They're 2880 × 1800 (16:10), like the 
 
 | File | Shows |
 | --- | --- |
-| `Screenshots/de/01-type-anywhere.png` | Hero image: menu bar menu and text being typed into a remote session |
-| `Screenshots/de/02-settings.png` | Settings: shortcut, typing speed, clipboard clearing, launch at login |
+| `Screenshots/de/01-type-anywhere.png` | Hero image: menu bar menu (with Type for) and text being typed into a remote session |
+| `Screenshots/de/02-settings.png` | Settings, Typing tab: Type for, typing speed, clipboard clearing |
 
 The sources are `screenshot-src/*.de.html`. To re-render them, run this from the project folder:
 

@@ -146,8 +146,8 @@ macOS screenshots must be 16:10. Files in `AppStore/Screenshots/` are 2880 × 18
 
 | File | Shows |
 | --- | --- |
-| `01-type-anywhere.png` | Hero image: menu bar menu and text being typed into a remote session |
-| `02-settings.png` | Settings: shortcut, typing speed, clipboard clearing, launch at login |
+| `01-type-anywhere.png` | Hero image: menu bar menu (with Type for) and text being typed into a remote session |
+| `02-settings.png` | Settings, Typing tab: Type for, typing speed, clipboard clearing |
 
 The sources are HTML files in `AppStore/screenshot-src/`. To re-render after editing one, run this from the project folder:
 
