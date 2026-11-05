@@ -5,7 +5,7 @@
 <title>TextToType: Settings</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  .copy { top: 190px; }
+  .copy { top: 115px; }
   h1 { font-size: 72px; }
 
   .features { list-style: none; margin-top: 38px; display: grid; gap: 22px; }
@@ -20,7 +20,7 @@
 
   /* Settings window, drawn at its real size and scaled up for legibility */
   .settings {
-    left: 770px; top: 120px; width: 460px;
+    left: 770px; top: 95px; width: 460px;
     transform: scale(1.32); transform-origin: top left;
     background: #1f1f21;
   }
@@ -51,6 +51,16 @@
   .track .knob { position: absolute; left: 15%; top: 50%; width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.5); }
   .ms { width: 44px; text-align: right; color: #c7c7cc; font-variant-numeric: tabular-nums; }
 
+  .popup {
+    display: flex; align-items: center; gap: 8px; padding: 3px 6px 3px 10px; border-radius: 6px;
+    background: #48484c; box-shadow: inset 0 .5px 0 rgba(255,255,255,.18), 0 .5px 1px rgba(0,0,0,.4);
+  }
+  .popup .chev {
+    width: 16px; height: 16px; border-radius: 4px; background: #0a84ff; color: #fff;
+    font-size: 8px; line-height: 7px; display: grid; place-items: center; text-align: center;
+  }
+  .group .caption + .row { border-top: 1px solid rgba(255,255,255,.07); }
+
   .toggle { width: 38px; height: 22px; border-radius: 11px; background: #0a84ff; position: relative; }
   .toggle::after { content: ""; position: absolute; right: 2px; top: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.35); }
 
@@ -66,6 +76,7 @@
     <ul class="features">
       <li><div class="ic">⌘</div><div><b>Any global shortcut</b><span>Record the key combo that suits you, and press it again to stop.</span></div></li>
       <li><div class="ic">⏱</div><div><b>Adjustable typing speed</b><span>Slow it down for laggy remote sessions and VMs.</span></div></li>
+      <li><div class="ic"><svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true"><rect x="2" y="9" width="16" height="12" rx="3" fill="currentColor"/><path d="M5.5 9V6.5a4.5 4.5 0 0 1 9 0V9" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></div><div><b>Password-manager friendly</b><span>Clears copied passwords from the clipboard once they're typed.</span></div></li>
       <li><div class="ic">↻</div><div><b>Always ready</b><span>Lives in the menu bar and launches at login.</span></div></li>
     </ul>
   </div>
@@ -88,6 +99,11 @@
           <div class="slider"><div class="track"><div class="fill"></div><div class="knob"></div></div><span class="ms">15 ms</span></div>
         </div>
         <div class="caption">Increase this if the target app (e.g. a remote desktop or VM) drops characters.</div>
+        <div class="row with-caption">
+          <span>Clear clipboard after typing</span>
+          <div class="popup">Only passwords<div class="chev">▴<br>▾</div></div>
+        </div>
+        <div class="caption">“Only passwords” clears text that a password manager marked as a password. The clipboard is left alone if you copied something else while typing, or if you stopped typing early.</div>
       </div>
 
       <div class="section-title">General</div>
