@@ -7,9 +7,10 @@
 A tiny, free and open source macOS menu bar app that **types your clipboard** with real keystrokes, which is handy where paste doesn't work: remote desktops, VMs, VNC/Citrix sessions, server and installer consoles, and web forms that block paste.
 
 - Global shortcut you can change (default **⌃⌥⌘V**). Press it again to stop typing.
-- Uses your current keyboard layout's real key codes (including ⇧/⌥ combinations). Characters that can't be reached with a single key fall back to Unicode input.
-- Typing into Windows over Remote Desktop or in a VM? Set **Type for → Windows PC** (menu or Settings). Characters on the AltGr layer, like @ on a German keyboard (⌥L on a Mac, AltGr+Q on Windows), are then typed the Windows way. Built-in AltGr tables cover German, Austrian, Swiss, Spanish, Italian, Swedish, Finnish, Danish, Norwegian, French and UK layouts.
-- **Type for → Any system (Unicode)** sends every character as text instead of key presses, so the keyboard layout doesn't matter. It works in Mac apps and in remote clients that pass text on; VMs, consoles and installer screens usually only understand key presses.
+- **Type for** (menu or Settings) picks how characters are sent:
+  - **Any system (Unicode)**, the default, sends every character as text instead of key presses, so the keyboard layout doesn't matter. It works in Mac apps and in remote clients that pass text on; VMs, consoles and installer screens usually only understand key presses.
+  - **Mac** presses your current keyboard layout's real keys (including ⇧/⌥ combinations). Characters that can't be reached with a single key fall back to Unicode input.
+  - **Windows PC** presses keys for a Windows target over Remote Desktop or in a VM. Characters on the AltGr layer, like @ on a German keyboard (⌥L on a Mac, AltGr+Q on Windows), are then typed the Windows way. Built-in AltGr tables cover German, Austrian, Swiss, Spanish, Italian, Swedish, Finnish, Danish, Norwegian, French and UK layouts.
 - Adjustable delay per key, for remote sessions that drop characters.
 - Works with password managers: copy a password, press the shortcut. By default the clipboard is cleared afterwards when the password manager marked the text as a password (`org.nspasteboard.ConcealedType`), or always if you prefer.
 - Lives in the menu bar and can launch at login.

@@ -109,7 +109,7 @@ final class AppState: ObservableObject {
         clipboardClearing = defaults.string(forKey: Keys.clipboardClearing)
             .flatMap(ClipboardClearing.init(rawValue:)) ?? .passwords
         targetSystem = defaults.string(forKey: Keys.targetSystem)
-            .flatMap(TargetSystem.init(rawValue:)) ?? .mac
+            .flatMap(TargetSystem.init(rawValue:)) ?? .unicode
 
         hotKeys.onPress = { [weak self] in self?.toggleTyping(fromHotKey: true) }
         registerHotKey()
