@@ -8,6 +8,8 @@ A tiny, free and open source macOS menu bar app that **types your clipboard** wi
 
 - Global shortcut you can change (default **⌃⌥⌘V**). Press it again to stop typing.
 - Uses your current keyboard layout's real key codes (including ⇧/⌥ combinations). Characters that can't be reached with a single key fall back to Unicode input.
+- Typing into Windows over Remote Desktop or in a VM? Set **Type for → Windows PC** (menu or Settings). Characters on the AltGr layer, like @ on a German keyboard (⌥L on a Mac, AltGr+Q on Windows), are then typed the Windows way. Built-in AltGr tables cover German, Austrian, Swiss, Spanish, Italian, Swedish, Finnish, Danish, Norwegian, French and UK layouts.
+- **Type for → Any system (Unicode)** sends every character as text instead of key presses, so the keyboard layout doesn't matter. It works in Mac apps and in remote clients that pass text on; VMs, consoles and installer screens usually only understand key presses.
 - Adjustable delay per key, for remote sessions that drop characters.
 - Works with password managers: copy a password, press the shortcut. By default the clipboard is cleared afterwards when the password manager marked the text as a password (`org.nspasteboard.ConcealedType`), or always if you prefer.
 - Lives in the menu bar and can launch at login.

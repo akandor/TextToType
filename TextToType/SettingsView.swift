@@ -60,6 +60,15 @@ struct SettingsView: View {
             }
 
             Section("Typing") {
+                Picker("Type for", selection: $state.targetSystem) {
+                    ForEach(TargetSystem.allCases) { target in
+                        Text(target.title).tag(target)
+                    }
+                }
+                Text(state.targetSystem.detail)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+
                 LabeledContent("Delay per key") {
                     HStack {
                         Slider(value: $state.keyDelayMs, in: 0...100, step: 1)

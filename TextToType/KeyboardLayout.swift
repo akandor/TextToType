@@ -1,10 +1,42 @@
 import Carbon.HIToolbox
 import CoreGraphics
 
+/// A modifier key held down while pressing a key.
+enum Modifier: CaseIterable {
+    case control, shift, option, rightOption
+
+    var keyCode: CGKeyCode {
+        switch self {
+        case .control: CGKeyCode(kVK_Control)
+        case .shift: CGKeyCode(kVK_Shift)
+        case .option: CGKeyCode(kVK_Option)
+        case .rightOption: CGKeyCode(kVK_RightOption)
+        }
+    }
+
+    /// Event flags including the device-dependent bit (left/right key), so remote desktop
+    /// and VM clients that look at it can tell e.g. right Option (AltGr) from left Option.
+    var flags: CGEventFlags {
+        switch self {
+        case .control: [.maskControl, CGEventFlags(rawValue: UInt64(NX_DEVICELCTLKEYMASK))]
+        case .shift: [.maskShift, CGEventFlags(rawValue: UInt64(NX_DEVICELSHIFTKEYMASK))]
+        case .option: [.maskAlternate, CGEventFlags(rawValue: UInt64(NX_DEVICELALTKEYMASK))]
+        case .rightOption: [.maskAlternate, CGEventFlags(rawValue: UInt64(NX_DEVICERALTKEYMASK))]
+        }
+    }
+}
+
 /// A physical key press: virtual key code plus the modifiers needed to produce a character.
 struct KeyStroke {
     let keyCode: CGKeyCode
-    let flags: CGEventFlags
+    /// Pressed in this order, released in reverse.
+    let modifiers: [Modifier]
+
+    /// AltGr on Windows: Ctrl + right Alt. Windows treats Ctrl+Alt as AltGr, and clients that
+    /// pass right Alt through as AltGr get that too.
+    static func altGr(_ keyCode: CGKeyCode, shift: Bool = false) -> KeyStroke {
+        KeyStroke(keyCode: keyCode, modifiers: [.control, .rightOption] + (shift ? [.shift] : []))
+    }
 }
 
 /// Helpers around the user's current keyboard layout.
@@ -18,38 +50,102 @@ enum KeyboardLayout {
         kVK_ANSI_Keypad5, kVK_ANSI_Keypad6, kVK_ANSI_Keypad7, kVK_ANSI_Keypad8, kVK_ANSI_Keypad9,
     ]
 
-    /// Builds a map of every character the current layout can produce with
-    /// no modifier, ⇧, ⌥ or ⇧⌥ — preferring the simplest combination.
-    static func characterMap() -> [Character: KeyStroke] {
-        let combos: [(carbon: UInt32, flags: CGEventFlags)] = [
-            (0, []),
-            (UInt32(shiftKey), .maskShift),
-            (UInt32(optionKey), .maskAlternate),
-            (UInt32(shiftKey | optionKey), [.maskShift, .maskAlternate]),
-        ]
+    /// Keys that only exist on Japanese (JIS) keyboards. Skipped for Windows, where PC keyboards lack them.
+    private static let jisKeyCodes: Set<Int> = [kVK_JIS_Yen, kVK_JIS_Underscore, kVK_JIS_KeypadComma, kVK_JIS_Eisu, kVK_JIS_Kana]
 
-        return withLayout { layout in
+    /// Builds a map of every character that can be typed with a single key combination.
+    ///
+    /// - `.mac`: the current layout with no modifier, ⇧, ⌥ or ⇧⌥, preferring the simplest combination.
+    /// - `.windows`: the Windows (PC) version of the current layout: its unmodified and ⇧ layers,
+    ///   plus its AltGr layer typed as Ctrl + right Alt. The Mac ⌥ layer is not used, because the
+    ///   remote side reads ⌥ as plain Alt (e.g. ⌥L for @ on a German Mac is Alt+L on Windows).
+    /// - `.unicode`: only space; everything else is sent as Unicode text (Return/Tab are always keys).
+    static func characterMap(for target: TargetSystem) -> [Character: KeyStroke] {
+        switch target {
+        case .mac: macCharacterMap()
+        case .windows: windowsCharacterMap()
+        // Space is the same key everywhere; everything else is typed as Unicode.
+        case .unicode: [" ": KeyStroke(keyCode: CGKeyCode(kVK_Space), modifiers: [])]
+        }
+    }
+
+    private static func macCharacterMap() -> [Character: KeyStroke] {
+        let combos: [(carbon: UInt32, modifiers: [Modifier])] = [
+            (0, []),
+            (UInt32(shiftKey), [.shift]),
+            (UInt32(optionKey), [.option]),
+            (UInt32(shiftKey | optionKey), [.shift, .option]),
+        ]
+        return withLayout(id: nil) { layout in
             var map: [Character: KeyStroke] = [:]
             for combo in combos {
-                for code in 0..<128 where !keypadKeyCodes.contains(code) {
-                    guard let string = translate(layout, keyCode: UInt16(code), modifiers: combo.carbon),
-                          string.count == 1,
-                          let character = string.first,
-                          map[character] == nil,
-                          let scalar = character.unicodeScalars.first,
-                          scalar.value >= 0x20, scalar.value != 0x7F
-                    else { continue }
-                    map[character] = KeyStroke(keyCode: CGKeyCode(code), flags: combo.flags)
+                for (code, character) in characters(layout, modifiers: combo.carbon).sorted(by: { $0.key < $1.key })
+                where map[character] == nil {
+                    map[character] = KeyStroke(keyCode: CGKeyCode(code), modifiers: combo.modifiers)
                 }
             }
             return map
         } ?? [:]
     }
 
+    private static func windowsCharacterMap() -> [Character: KeyStroke] {
+        let pc = PCLayout.forLayout(id: currentLayoutID())
+        return withLayout(id: pc.baseLayoutID) { layout in
+            let base = characters(layout, modifiers: 0, skipping: jisKeyCodes)
+            var layers = [false: base, true: characters(layout, modifiers: UInt32(shiftKey), skipping: jisKeyCodes)]
+
+            func code(for key: PCLayout.Key) -> Int? {
+                switch key {
+                case .code(let code): code
+                case .base(let character): base.filter { $0.value == character }.keys.min()
+                }
+            }
+
+            // Keys where the Windows layout differs from the macOS one.
+            for change in pc.changes {
+                guard let code = code(for: change.key) else { continue }
+                layers[change.shifted]![code] = change.character
+            }
+
+            var map: [Character: KeyStroke] = [:]
+            for shifted in [false, true] {
+                for (code, character) in layers[shifted]!.sorted(by: { $0.key < $1.key }) where map[character] == nil {
+                    map[character] = KeyStroke(keyCode: CGKeyCode(code), modifiers: shifted ? [.shift] : [])
+                }
+            }
+            for (shifted, entries) in [(false, pc.altGr), (true, pc.shiftAltGr)] {
+                for (key, character) in entries where map[character] == nil {
+                    guard let code = code(for: key) else { continue }
+                    map[character] = .altGr(CGKeyCode(code), shift: shifted)
+                }
+            }
+            return map
+        } ?? [:]
+    }
+
+    /// Printable single characters produced by each key (by key code) with the given modifiers.
+    private static func characters(
+        _ layout: UnsafePointer<UCKeyboardLayout>,
+        modifiers: UInt32,
+        skipping skipped: Set<Int> = []
+    ) -> [Int: Character] {
+        var result: [Int: Character] = [:]
+        for code in 0..<128 where !keypadKeyCodes.contains(code) && !skipped.contains(code) {
+            guard let string = translate(layout, keyCode: UInt16(code), modifiers: modifiers),
+                  string.count == 1,
+                  let character = string.first,
+                  let scalar = character.unicodeScalars.first,
+                  scalar.value >= 0x20, scalar.value != 0x7F
+            else { continue }
+            result[code] = character
+        }
+        return result
+    }
+
     /// Human-readable name of a key for display in shortcuts.
     static func keyName(for keyCode: UInt16) -> String {
         if let name = specialKeyNames[Int(keyCode)] { return name }
-        if let string = withLayout({ translate($0, keyCode: keyCode, modifiers: 0) }) ?? nil,
+        if let string = withLayout(id: nil, { translate($0, keyCode: keyCode, modifiers: 0) }) ?? nil,
            !string.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             return string.uppercased()
         }
@@ -68,8 +164,24 @@ enum KeyboardLayout {
 
     // MARK: Private
 
-    private static func withLayout<T>(_ body: (UnsafePointer<UCKeyboardLayout>) -> T) -> T? {
-        let sources = [
+    /// Input source ID of the current keyboard layout, e.g. `com.apple.keylayout.German`.
+    private static func currentLayoutID() -> String? {
+        guard let source = TISCopyCurrentKeyboardLayoutInputSource()?.takeRetainedValue(),
+              let raw = TISGetInputSourceProperty(source, kTISPropertyInputSourceID)
+        else { return nil }
+        return Unmanaged<CFString>.fromOpaque(raw).takeUnretainedValue() as String
+    }
+
+    /// Runs `body` with the layout data of the given installed layout, or the current one if `id` is nil
+    /// (or not installed).
+    private static func withLayout<T>(id: String?, _ body: (UnsafePointer<UCKeyboardLayout>) -> T) -> T? {
+        var sources: [TISInputSource?] = []
+        if let id {
+            let filter = [kTISPropertyInputSourceID as String: id] as CFDictionary
+            let list = TISCreateInputSourceList(filter, true)?.takeRetainedValue() as? [TISInputSource]
+            sources.append(list?.first)
+        }
+        sources += [
             TISCopyCurrentKeyboardLayoutInputSource()?.takeRetainedValue(),
             TISCopyCurrentASCIICapableKeyboardLayoutInputSource()?.takeRetainedValue(),
         ]

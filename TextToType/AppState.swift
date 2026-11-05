@@ -20,6 +20,37 @@ enum ClipboardClearing: String, CaseIterable, Identifiable {
     }
 }
 
+/// The system that receives the keystrokes. Remote desktop and VM clients send physical keys,
+/// so characters must be typed with the key combination the remote system's layout expects.
+enum TargetSystem: String, CaseIterable, Identifiable {
+    case mac
+    /// Windows PC (e.g. via Remote Desktop or a VM): AltGr instead of ⌥.
+    case windows
+    /// Every character sent as text (Unicode) instead of key presses, independent of the layout.
+    case unicode
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .mac: String(localized: "Mac")
+        case .windows: String(localized: "Windows PC")
+        case .unicode: String(localized: "Any system (Unicode)")
+        }
+    }
+
+    var detail: String {
+        switch self {
+        case .mac:
+            String(localized: "Presses the keys of your Mac keyboard layout. For Mac apps and remote Macs.")
+        case .windows:
+            String(localized: "Types characters on the AltGr layer, like @ on a German keyboard, the Windows way. For Windows over Remote Desktop or in a VM.")
+        case .unicode:
+            String(localized: "Sends each character as text instead of a key press, so the keyboard layout doesn't matter. Works in Mac apps and in remote clients that pass text on. VMs, consoles and installer screens may type nothing or wrong letters.")
+        }
+    }
+}
+
 extension NSPasteboard.PasteboardType {
     /// Set by password managers (KeePassXC, 1Password, …) on secrets they copy. See nspasteboard.org.
     static let concealed = NSPasteboard.PasteboardType("org.nspasteboard.ConcealedType")
@@ -33,6 +64,7 @@ final class AppState: ObservableObject {
         static let shortcut = "shortcut"
         static let keyDelay = "keyDelayMs"
         static let clipboardClearing = "clipboardClearing"
+        static let targetSystem = "targetSystem"
     }
 
     @Published var shortcut: Shortcut? {
@@ -49,6 +81,10 @@ final class AppState: ObservableObject {
 
     @Published var clipboardClearing: ClipboardClearing {
         didSet { defaults.set(clipboardClearing.rawValue, forKey: Keys.clipboardClearing) }
+    }
+
+    @Published var targetSystem: TargetSystem {
+        didSet { defaults.set(targetSystem.rawValue, forKey: Keys.targetSystem) }
     }
 
     @Published private(set) var isTyping = false
@@ -72,6 +108,8 @@ final class AppState: ObservableObject {
         keyDelayMs = defaults.object(forKey: Keys.keyDelay) as? Double ?? 10
         clipboardClearing = defaults.string(forKey: Keys.clipboardClearing)
             .flatMap(ClipboardClearing.init(rawValue:)) ?? .passwords
+        targetSystem = defaults.string(forKey: Keys.targetSystem)
+            .flatMap(TargetSystem.init(rawValue:)) ?? .mac
 
         hotKeys.onPress = { [weak self] in self?.toggleTyping(fromHotKey: true) }
         registerHotKey()
@@ -114,6 +152,7 @@ final class AppState: ObservableObject {
             text: text,
             keyDelay: keyDelayMs / 1000,
             startDelay: fromHotKey ? 0.1 : 0.4,
+            target: targetSystem,
             job: job
         ) { [weak self] in
             guard let self else { return }

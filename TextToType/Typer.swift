@@ -24,11 +24,12 @@ enum Typer {
         text: String,
         keyDelay: TimeInterval,
         startDelay: TimeInterval,
+        target: TargetSystem,
         job: TypingJob,
         completion: @escaping () -> Void
     ) {
         // Resolve the keyboard layout on the main thread before going to the background.
-        let map = KeyboardLayout.characterMap()
+        let map = KeyboardLayout.characterMap(for: target)
 
         let thread = Thread {
             defer { DispatchQueue.main.async(execute: completion) }
@@ -62,9 +63,9 @@ enum Typer {
 
     private static func type(_ character: Character, map: [Character: KeyStroke], source: CGEventSource?) {
         if character.isNewline {
-            press(KeyStroke(keyCode: CGKeyCode(kVK_Return), flags: []), source: source)
+            press(KeyStroke(keyCode: CGKeyCode(kVK_Return), modifiers: []), source: source)
         } else if character == "\t" {
-            press(KeyStroke(keyCode: CGKeyCode(kVK_Tab), flags: []), source: source)
+            press(KeyStroke(keyCode: CGKeyCode(kVK_Tab), modifiers: []), source: source)
         } else if let stroke = map[character] {
             press(stroke, source: source)
         } else {
@@ -75,24 +76,19 @@ enum Typer {
 
     /// Presses a key the way a human would: modifier(s) down, key down/up, modifier(s) up.
     private static func press(_ stroke: KeyStroke, source: CGEventSource?) {
-        let modifierKeys: [(code: CGKeyCode, flag: CGEventFlags)] = [
-            (CGKeyCode(kVK_Shift), .maskShift),
-            (CGKeyCode(kVK_Option), .maskAlternate),
-        ].filter { stroke.flags.contains($0.flag) }
-
         var current: CGEventFlags = []
-        for key in modifierKeys {
-            current.insert(key.flag)
-            post(key.code, down: true, flags: current, source: source)
+        for modifier in stroke.modifiers {
+            current.formUnion(modifier.flags)
+            post(modifier.keyCode, down: true, flags: current, source: source)
         }
 
-        post(stroke.keyCode, down: true, flags: stroke.flags, source: source)
+        post(stroke.keyCode, down: true, flags: current, source: source)
         usleep(2000)
-        post(stroke.keyCode, down: false, flags: stroke.flags, source: source)
+        post(stroke.keyCode, down: false, flags: current, source: source)
 
-        for key in modifierKeys.reversed() {
-            current.remove(key.flag)
-            post(key.code, down: false, flags: current, source: source)
+        for (index, modifier) in stroke.modifiers.enumerated().reversed() {
+            current = stroke.modifiers[..<index].reduce(into: []) { $0.formUnion($1.flags) }
+            post(modifier.keyCode, down: false, flags: current, source: source)
         }
     }
 

@@ -432,6 +432,76 @@
           }
         }
       }
+    },
+    "Type for" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippen für"
+          }
+        }
+      }
+    },
+    "Mac" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac"
+          }
+        }
+      }
+    },
+    "Windows PC" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Windows-PC"
+          }
+        }
+      }
+    },
+    "Any system (Unicode)" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jedes System (Unicode)"
+          }
+        }
+      }
+    },
+    "Presses the keys of your Mac keyboard layout. For Mac apps and remote Macs." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drückt die Tasten deines Mac-Tastaturlayouts. Für Mac-Apps und entfernte Macs."
+          }
+        }
+      }
+    },
+    "Types characters on the AltGr layer, like @ on a German keyboard, the Windows way. For Windows over Remote Desktop or in a VM." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tippt Zeichen auf der AltGr-Ebene, etwa @ auf einer deutschen Tastatur, so wie Windows sie erwartet. Für Windows per Remotedesktop oder in einer VM."
+          }
+        }
+      }
+    },
+    "Sends each character as text instead of a key press, so the keyboard layout doesn't matter. Works in Mac apps and in remote clients that pass text on. VMs, consoles and installer screens may type nothing or wrong letters." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sendet jedes Zeichen als Text statt als Tastendruck, das Tastaturlayout spielt also keine Rolle. Funktioniert in Mac-Apps und in Remote-Clients, die Text weitergeben. In VMs, Konsolen und Installationsbildschirmen kann nichts oder Falsches ankommen."
+          }
+        }
+      }
     }
   },
   "version" : "1.3"

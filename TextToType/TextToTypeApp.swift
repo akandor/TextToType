@@ -58,6 +58,12 @@ struct MenuContent: View {
             Button("⚠️ Grant Accessibility Access…") { state.requestAccessibility() }
         }
 
+        Picker("Type for", selection: $state.targetSystem) {
+            ForEach(TargetSystem.allCases) { target in
+                Text(target.title).tag(target)
+            }
+        }
+
         Divider()
 
         Toggle("Launch at Login", isOn: Binding(

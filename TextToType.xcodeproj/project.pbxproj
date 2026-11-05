@@ -10,6 +10,7 @@
 		15C5AA229AA8E07E9AA9418A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0ED487C735E48FBF2F533 /* SettingsView.swift */; };
 		23119A89516A86F528D22BDE /* Typer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27356D6CC467705BAC8A577D /* Typer.swift */; };
 		341A99A6BCBA7C5E9AAC6473 /* Shortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACDF48D907EFF6499163554 /* Shortcut.swift */; };
+		784F62F58904B1315DB048F9 /* PCLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF8A2D6E060BCFB91AB7C17 /* PCLayout.swift */; };
 		8FCBD1CBAFAAE2CCFB2196F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DD22BD2096DB86DBEED033 /* Assets.xcassets */; };
 		A3AF239B556E66E403E11994 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7290F8A28131C90C7B4A1B /* AppState.swift */; };
 		C64E5F2B309C8511005D831E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C64E5F2A309C8511005D831E /* Localizable.xcstrings */; };
@@ -26,6 +27,7 @@
 		670E95D9015F14C822B7A731 /* TextToType.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TextToType.entitlements; sourceTree = "<group>"; };
 		6DE0ED487C735E48FBF2F533 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7ACDF48D907EFF6499163554 /* Shortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcut.swift; sourceTree = "<group>"; };
+		8EF8A2D6E060BCFB91AB7C17 /* PCLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCLayout.swift; sourceTree = "<group>"; };
 		A6DD22BD2096DB86DBEED033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA14267FA0514C24DE262A2D /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		B8D74C2FF6EA5F4310CCFEFD /* TextToTypeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToTypeApp.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				A6DD22BD2096DB86DBEED033 /* Assets.xcassets */,
 				C6BB7BDAD77A173588EB856D /* HotKeyManager.swift */,
 				FEC51779B30A9ED922D0D474 /* KeyboardLayout.swift */,
+				8EF8A2D6E060BCFB91AB7C17 /* PCLayout.swift */,
 				6DE0ED487C735E48FBF2F533 /* SettingsView.swift */,
 				7ACDF48D907EFF6499163554 /* Shortcut.swift */,
 				670E95D9015F14C822B7A731 /* TextToType.entitlements */,
@@ -146,6 +149,7 @@
 				A3AF239B556E66E403E11994 /* AppState.swift in Sources */,
 				D969AFB8C71697FE040D6305 /* HotKeyManager.swift in Sources */,
 				E49D64E3DB0A492E1681D90C /* KeyboardLayout.swift in Sources */,
+				784F62F58904B1315DB048F9 /* PCLayout.swift in Sources */,
 				15C5AA229AA8E07E9AA9418A /* SettingsView.swift in Sources */,
 				341A99A6BCBA7C5E9AAC6473 /* Shortcut.swift in Sources */,
 				E137AAC32CCAE2759C46D8C9 /* TextToTypeApp.swift in Sources */,
@@ -164,7 +168,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = UE57845B3R;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -257,7 +261,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = UE57845B3R;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
