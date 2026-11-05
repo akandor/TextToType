@@ -9,10 +9,9 @@ final class SettingsWindowController: NSObject, NSWindowDelegate {
 
     func show() {
         if window == nil {
-            let hosting = NSHostingController(rootView: SettingsView().environmentObject(AppState.shared))
-            let window = NSWindow(contentViewController: hosting)
-            window.title = String(localized: "TextToType Settings")
+            let window = NSWindow(contentViewController: makeTabs())
             window.styleMask = [.titled, .closable]
+            window.toolbarStyle = .preference
             window.isReleasedWhenClosed = false
             window.delegate = self
             window.center()
@@ -33,18 +32,48 @@ final class SettingsWindowController: NSObject, NSWindowDelegate {
     func windowWillClose(_ notification: Notification) {
         NSApp.setActivationPolicy(.accessory)
     }
+
+    /// Toolbar tabs like in Apple's apps; the window resizes to each tab's content.
+    private func makeTabs() -> NSTabViewController {
+        let tabs = NSTabViewController()
+        tabs.tabStyle = .toolbar
+        tabs.transitionOptions = [.allowUserInteraction]
+
+        func add(_ title: String, symbol: String, _ view: some View) {
+            let hosting = NSHostingController(rootView: view.environmentObject(AppState.shared))
+            hosting.sizingOptions = .preferredContentSize
+            hosting.title = title // shown as the window title while the tab is selected
+            let item = NSTabViewItem(viewController: hosting)
+            item.label = title
+            item.image = NSImage(systemSymbolName: symbol, accessibilityDescription: title)
+            tabs.addTabViewItem(item)
+        }
+
+        add(String(localized: "General"), symbol: "gearshape", GeneralSettingsView())
+        add(String(localized: "Typing"), symbol: "keyboard", TypingSettingsView())
+        add(String(localized: "Permissions"), symbol: "lock.shield", PermissionsSettingsView())
+        add(String(localized: "About"), symbol: "info.circle", AboutSettingsView())
+        return tabs
+    }
 }
 
-struct SettingsView: View {
-    @EnvironmentObject private var state: AppState
-
-    static let repositoryURL = URL(string: "https://github.com/akandor/TextToType")!
-    static var appVersion: String {
-        Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
-    }
+/// Common look of the settings tabs.
+private struct SettingsPane<Content: View>: View {
+    @ViewBuilder var content: Content
 
     var body: some View {
-        Form {
+        Form { content }
+            .formStyle(.grouped)
+            .frame(width: 460)
+            .fixedSize(horizontal: false, vertical: true)
+    }
+}
+
+struct GeneralSettingsView: View {
+    @EnvironmentObject private var state: AppState
+
+    var body: some View {
+        SettingsPane {
             Section {
                 LabeledContent("Shortcut") {
                     ShortcutRecorder(shortcut: $state.shortcut) { recording in
@@ -59,39 +88,7 @@ struct SettingsView: View {
                     .foregroundStyle(.secondary)
             }
 
-            Section("Typing") {
-                Picker("Type for", selection: $state.targetSystem) {
-                    ForEach(TargetSystem.allCases) { target in
-                        Text(target.title).tag(target)
-                    }
-                }
-                Text(state.targetSystem.detail)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-
-                LabeledContent("Delay per key") {
-                    HStack {
-                        Slider(value: $state.keyDelayMs, in: 0...100, step: 1)
-                        Text("\(Int(state.keyDelayMs)) ms")
-                            .monospacedDigit()
-                            .frame(width: 50, alignment: .trailing)
-                    }
-                }
-                Text("Increase this if the target app (e.g. a remote desktop or VM) drops characters.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-
-                Picker("Clear clipboard after typing", selection: $state.clipboardClearing) {
-                    ForEach(ClipboardClearing.allCases) { option in
-                        Text(option.title).tag(option)
-                    }
-                }
-                Text("“Only passwords” clears text that a password manager marked as a password. The clipboard is left alone if you copied something else while typing, or if you stopped typing early.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-
-            Section("General") {
+            Section {
                 Picker("Language", selection: $state.language) {
                     ForEach(AppLanguage.allCases) { language in
                         Text(verbatim: language.title).tag(language)
@@ -123,8 +120,60 @@ struct SettingsView: View {
                     Text(error).font(.caption).foregroundStyle(.red)
                 }
             }
+        }
+    }
+}
 
-            Section("Permissions") {
+struct TypingSettingsView: View {
+    @EnvironmentObject private var state: AppState
+
+    var body: some View {
+        SettingsPane {
+            Section {
+                Picker("Type for", selection: $state.targetSystem) {
+                    ForEach(TargetSystem.allCases) { target in
+                        Text(target.title).tag(target)
+                    }
+                }
+                Text(state.targetSystem.detail)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
+            Section {
+                LabeledContent("Delay per key") {
+                    HStack {
+                        Slider(value: $state.keyDelayMs, in: 0...100, step: 1)
+                        Text("\(Int(state.keyDelayMs)) ms")
+                            .monospacedDigit()
+                            .frame(width: 50, alignment: .trailing)
+                    }
+                }
+                Text("Increase this if the target app (e.g. a remote desktop or VM) drops characters.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
+            Section {
+                Picker("Clear clipboard after typing", selection: $state.clipboardClearing) {
+                    ForEach(ClipboardClearing.allCases) { option in
+                        Text(option.title).tag(option)
+                    }
+                }
+                Text("“Only passwords” clears text that a password manager marked as a password. The clipboard is left alone if you copied something else while typing, or if you stopped typing early.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+}
+
+struct PermissionsSettingsView: View {
+    @EnvironmentObject private var state: AppState
+
+    var body: some View {
+        SettingsPane {
+            Section {
                 HStack {
                     Image(systemName: state.hasAccessibility ? "checkmark.circle.fill" : "exclamationmark.triangle.fill")
                         .foregroundStyle(state.hasAccessibility ? .green : .orange)
@@ -142,26 +191,35 @@ struct SettingsView: View {
                         .foregroundStyle(.secondary)
                 }
             }
+        }
+        .onAppear { state.refreshStatus() }
+    }
+}
 
-            Section {
-                HStack {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("TextToType is free and open source.")
-                        Text("Version \(Self.appVersion)")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
-                    Spacer()
-                    Link(destination: Self.repositoryURL) {
-                        Label("View on GitHub", systemImage: "arrow.up.right.square")
-                    }
-                }
+struct AboutSettingsView: View {
+    static let repositoryURL = URL(string: "https://github.com/akandor/TextToType")!
+    static var appVersion: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
+    }
+
+    var body: some View {
+        VStack(spacing: 10) {
+            Image(nsImage: NSApp.applicationIconImage)
+                .resizable()
+                .frame(width: 96, height: 96)
+            Text(verbatim: "TextToType")
+                .font(.title2.bold())
+            Text("Version \(Self.appVersion)")
+                .font(.callout)
+                .foregroundStyle(.secondary)
+            Text("TextToType is free and open source.")
+                .padding(.top, 4)
+            Link(destination: Self.repositoryURL) {
+                Label("View on GitHub", systemImage: "arrow.up.right.square")
             }
         }
-        .formStyle(.grouped)
+        .padding(.vertical, 28)
         .frame(width: 460)
-        .fixedSize(horizontal: false, vertical: true)
-        .onAppear { state.refreshStatus() }
     }
 }
 
