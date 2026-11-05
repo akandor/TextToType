@@ -34,6 +34,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         if !UserDefaults.standard.bool(forKey: firstLaunchKey) {
             UserDefaults.standard.set(true, forKey: firstLaunchKey)
             SettingsWindowController.shared.show()
+        } else if AppState.wasRelaunched {
+            // Restarted from Settings (e.g. after changing the language): show Settings again.
+            SettingsWindowController.shared.show()
         }
     }
 

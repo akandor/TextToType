@@ -92,6 +92,20 @@ struct SettingsView: View {
             }
 
             Section("General") {
+                Picker("Language", selection: $state.language) {
+                    ForEach(AppLanguage.allCases) { language in
+                        Text(verbatim: language.title).tag(language)
+                    }
+                }
+                if state.language != state.launchLanguage {
+                    HStack {
+                        Text("Restart TextToType to use the new language.")
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                        Spacer()
+                        Button("Restart Now") { state.restart() }
+                    }
+                }
                 Toggle("Launch at login", isOn: Binding(
                     get: { state.launchAtLogin },
                     set: { state.setLaunchAtLogin($0) }

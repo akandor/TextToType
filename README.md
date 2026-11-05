@@ -14,6 +14,7 @@ A tiny, free and open source macOS menu bar app that **types your clipboard** wi
 - Adjustable delay per key, for remote sessions that drop characters.
 - Works with password managers: copy a password, press the shortcut. By default the clipboard is cleared afterwards when the password manager marked the text as a password (`org.nspasteboard.ConcealedType`), or always if you prefer.
 - Lives in the menu bar and can launch at login.
+- In English, German, French, Italian, Spanish and Portuguese (Brazil). It follows your Mac's language; to pick another, use **Settings → General → Language**.
 - Sandboxed, with no network access and no data collection (see [PRIVACY.md](PRIVACY.md)).
 
 ## Usage

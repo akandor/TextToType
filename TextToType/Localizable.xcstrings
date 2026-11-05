@@ -8,12 +8,60 @@
             "state" : "translated",
             "value" : "„Nur Passwörter“ löscht Text, den ein Passwort-Manager als Passwort markiert hat. Die Zwischenablage bleibt unberührt, wenn du während der Eingabe etwas anderes kopiert hast oder die Eingabe vorzeitig abgebrochen hast."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« Mots de passe uniquement » efface le texte qu’un gestionnaire de mots de passe a marqué comme mot de passe. Le presse-papiers n’est pas modifié si vous avez copié autre chose pendant la saisie ou si vous avez arrêté la saisie avant la fin."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Solo password» cancella il testo che un gestore di password ha contrassegnato come password. Gli appunti restano invariati se hai copiato qualcos’altro durante la digitazione o se l’hai interrotta prima della fine."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Solo contraseñas» borra el texto que un gestor de contraseñas haya marcado como contraseña. El portapapeles no se toca si has copiado otra cosa mientras se escribía o si has detenido la escritura antes de tiempo."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“Somente senhas” apaga o texto que um gerenciador de senhas marcou como senha. A área de transferência não é alterada se você copiou outra coisa durante a digitação ou se interrompeu a digitação antes do fim."
+          }
         }
       }
     },
     "%lld ms" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ms"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ms"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ms"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld ms"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld ms"
@@ -28,6 +76,30 @@
             "state" : "translated",
             "value" : "⚠️ Zugriff auf Bedienungshilfen gewähren…"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚠️ Autoriser l’accès Accessibilité…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚠️ Concedi l’accesso ad Accessibilità…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚠️ Conceder acceso de accesibilidad…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚠️ Conceder Acesso à Acessibilidade…"
+          }
         }
       }
     },
@@ -37,6 +109,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zugriff auf Bedienungshilfen erteilt"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accès Accessibilité autorisé"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accesso ad Accessibilità concesso"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acceso de accesibilidad concedido"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acesso à Acessibilidade concedido"
           }
         }
       }
@@ -48,6 +144,30 @@
             "state" : "translated",
             "value" : "Zum Eintippen ist Zugriff auf die Bedienungshilfen erforderlich"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’accès Accessibilité est nécessaire pour saisir du texte"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per digitare è necessario l’accesso ad Accessibilità"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se necesita acceso de accesibilidad para escribir"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O acesso à Acessibilidade é necessário para digitar"
+          }
         }
       }
     },
@@ -57,6 +177,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bereits in den Systemeinstellungen aktiviert? Dieser Eintrag stammt von einer älteren Version. Entferne ihn mit „−“ und füge diese App erneut hinzu."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Déjà activé dans Réglages Système ? Cette entrée provient d’une version antérieure. Supprimez-la avec « − » et ajoutez à nouveau cette app."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Già attivato in Impostazioni di Sistema? Quella voce appartiene a una versione precedente. Rimuovila con “−” e aggiungi di nuovo questa app."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Ya está activado en Ajustes del Sistema? Esa entrada es de una versión anterior. Elimínala con «−» y vuelve a añadir esta app."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já está ativado nos Ajustes do Sistema? Esse item é de uma versão anterior. Remova-o com “−” e adicione este app novamente."
           }
         }
       }
@@ -68,6 +212,30 @@
             "state" : "translated",
             "value" : "Immer"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toujours"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sempre"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siempre"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sempre"
+          }
         }
       }
     },
@@ -77,6 +245,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abbrechen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         }
       }
@@ -88,6 +280,30 @@
             "state" : "translated",
             "value" : "Zwischenablage nach der Eingabe löschen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effacer le presse-papiers après la saisie"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Svuota gli appunti dopo la digitazione"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar el portapapeles tras escribir"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limpar a área de transferência após digitar"
+          }
         }
       }
     },
@@ -97,6 +313,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tastenkombination löschen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effacer le raccourci"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina scorciatoia"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar atajo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limpar atalho"
           }
         }
       }
@@ -108,6 +348,30 @@
             "state" : "translated",
             "value" : "Klicke, um eine neue Tastenkombination aufzunehmen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cliquez pour enregistrer un nouveau raccourci"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fai clic per registrare una nuova scorciatoia"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz clic para grabar un nuevo atajo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique para gravar um novo atalho"
+          }
         }
       }
     },
@@ -117,6 +381,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Die Tastenkombination konnte nicht registriert werden (Fehler %d)."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible d’enregistrer le raccourci (erreur %d)."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile registrare la scorciatoia (errore %d)."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se ha podido registrar el atajo (error %d)."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível registrar o atalho (erro %d)."
           }
         }
       }
@@ -128,6 +416,30 @@
             "state" : "translated",
             "value" : "Verzögerung pro Taste"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Délai par touche"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ritardo per tasto"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retardo por tecla"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atraso por tecla"
+          }
         }
       }
     },
@@ -137,6 +449,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Allgemein"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Général"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generali"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "General"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geral"
           }
         }
       }
@@ -148,6 +484,30 @@
             "state" : "translated",
             "value" : "Zugriff gewähren…"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autoriser l’accès…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concedi accesso…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conceder acceso…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conceder Acesso…"
+          }
         }
       }
     },
@@ -157,6 +517,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erhöhe diesen Wert, wenn die Zielanwendung (z. B. ein Remote-Desktop oder eine virtuelle Maschine) Zeichen auslässt."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Augmentez cette valeur si l’app cible (par exemple un bureau à distance ou une machine virtuelle) perd des caractères."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aumenta questo valore se l’app di destinazione (ad esempio un desktop remoto o una macchina virtuale) perde dei caratteri."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auméntalo si la app de destino (por ejemplo, un escritorio remoto o una máquina virtual) pierde caracteres."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aumente este valor se o app de destino (por exemplo, uma área de trabalho remota ou uma máquina virtual) perder caracteres."
           }
         }
       }
@@ -169,6 +553,30 @@
             "state" : "translated",
             "value" : "Taste %u"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touche %u"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tasto %u"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tecla %u"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tecla %u"
+          }
         }
       }
     },
@@ -178,6 +586,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bei der Anmeldung starten"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir à la connexion"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri al login"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir al iniciar sesión"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir ao iniciar sessão"
           }
         }
       }
@@ -189,6 +621,30 @@
             "state" : "translated",
             "value" : "Bei der Anmeldung starten"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir à la connexion"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri al login"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir al iniciar sesión"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir ao Iniciar Sessão"
+          }
         }
       }
     },
@@ -198,6 +654,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Muss in den Systemeinstellungen genehmigt werden."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nécessite une autorisation dans Réglages Système."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Richiede l’approvazione in Impostazioni di Sistema."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Requiere aprobación en Ajustes del Sistema."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Requer aprovação nos Ajustes do Sistema."
           }
         }
       }
@@ -209,6 +689,30 @@
             "state" : "translated",
             "value" : "Nie"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jamais"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mai"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nunca"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nunca"
+          }
         }
       }
     },
@@ -218,6 +722,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nur Passwörter"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mots de passe uniquement"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo password"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo contraseñas"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Somente senhas"
           }
         }
       }
@@ -229,6 +757,30 @@
             "state" : "translated",
             "value" : "Anmeldeobjekte öffnen…"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir les éléments d’ouverture…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri Elementi login…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir ítems de inicio…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Itens de Início…"
+          }
         }
       }
     },
@@ -238,6 +790,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Systemeinstellungen öffnen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir Réglages Système"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri Impostazioni di Sistema"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Ajustes del Sistema"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Ajustes do Sistema"
           }
         }
       }
@@ -249,6 +825,30 @@
             "state" : "translated",
             "value" : "Berechtigungen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorisations"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permessi"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permisos"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permissões"
+          }
         }
       }
     },
@@ -258,6 +858,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Drücke die Esc-Taste, um den Vorgang abzubrechen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez sur Échap pour annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premi Esc per annullare"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulsa Esc para cancelar"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pressione Esc para cancelar"
           }
         }
       }
@@ -269,6 +893,30 @@
             "state" : "translated",
             "value" : "Tastenkombination drücken…"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez sur le raccourci…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premi la scorciatoia…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulsa el atajo…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pressione o atalho…"
+          }
         }
       }
     },
@@ -278,6 +926,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Drücke die Tastenkombination, um den Inhalt der Zwischenablage in die aktive App einzutippen. Drücke sie erneut, um den Vorgang zu beenden."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez sur le raccourci pour saisir le contenu du presse-papiers dans l’app active. Appuyez à nouveau pour arrêter."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premi la scorciatoia per digitare il contenuto degli appunti nell’app attiva. Premila di nuovo per interrompere."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulsa el atajo para escribir el contenido del portapapeles en la app activa. Vuelve a pulsarlo para detenerlo."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pressione o atalho para digitar o conteúdo da área de transferência no app ativo. Pressione-o novamente para parar."
           }
         }
       }
@@ -289,6 +961,30 @@
             "state" : "translated",
             "value" : "TextToType beenden"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitter TextToType"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esci da TextToType"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salir de TextToType"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encerrar TextToType"
+          }
         }
       }
     },
@@ -298,6 +994,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tastenkombination aufnehmen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer un raccourci"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registra scorciatoia"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grabar atajo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gravar Atalho"
           }
         }
       }
@@ -309,6 +1029,30 @@
             "state" : "translated",
             "value" : "Einstellungen…"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes…"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes…"
+          }
         }
       }
     },
@@ -318,6 +1062,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tastenkombination"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raccourci"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scorciatoia"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atajo"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atalho"
           }
         }
       }
@@ -330,6 +1098,30 @@
             "state" : "translated",
             "value" : "Leertaste"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espace"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spazio"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espacio"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espaço"
+          }
         }
       }
     },
@@ -339,6 +1131,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eingabe stoppen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arrêter la saisie"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interrompi digitazione"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detener escritura"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parar Digitação"
           }
         }
       }
@@ -350,6 +1166,30 @@
             "state" : "translated",
             "value" : "TextToType ist kostenlos und Open Source."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TextToType est gratuit et open source."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TextToType è gratuito e open source."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TextToType es gratuito y de código abierto."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O TextToType é gratuito e de código aberto."
+          }
         }
       }
     },
@@ -359,6 +1199,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "TextToType benötigt Zugriff auf die Bedienungshilfen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TextToType a besoin de l’accès Accessibilité"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TextToType richiede l’accesso ad Accessibilità"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TextToType necesita acceso de accesibilidad"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O TextToType precisa de acesso à Acessibilidade"
           }
         }
       }
@@ -370,6 +1234,30 @@
             "state" : "translated",
             "value" : "TextToType-Einstellungen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages de TextToType"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni di TextToType"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes de TextToType"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes do TextToType"
+          }
         }
       }
     },
@@ -379,6 +1267,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Diese Tastenkombination wird bereits von einer anderen App verwendet."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce raccourci est déjà utilisé par une autre app."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questa scorciatoia è già usata da un’altra app."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otra app ya usa este atajo."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esse atalho já é usado por outro app."
           }
         }
       }
@@ -390,6 +1302,30 @@
             "state" : "translated",
             "value" : "Aktiviere TextToType unter Systemeinstellungen → Datenschutz & Sicherheit → Bedienungshilfen.\n\nWenn TextToType dort bereits aktiviert ist, gehört dieser Eintrag zu einer älteren Version der App. Wähle ihn aus, entferne ihn mit der Taste „−“ und füge diese Kopie erneut hinzu (oder aktiviere sie, wenn du dazu aufgefordert wirst)."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activez TextToType dans Réglages Système → Confidentialité et sécurité → Accessibilité.\n\nS’il y est déjà activé, cette entrée appartient à une version antérieure de l’app. Sélectionnez-la, supprimez-la avec le bouton « − », puis ajoutez à nouveau cette copie (ou activez-la lorsque vous y êtes invité)."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attiva TextToType in Impostazioni di Sistema → Privacy e sicurezza → Accessibilità.\n\nSe è già attivo, quella voce appartiene a una versione precedente dell’app. Selezionala, rimuovila con il pulsante “−”, quindi aggiungi di nuovo questa copia (o attivala quando richiesto)."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activa TextToType en Ajustes del Sistema → Privacidad y seguridad → Accesibilidad.\n\nSi ya está activado allí, esa entrada pertenece a una versión anterior de la app. Selecciónala, elimínala con el botón «−» y vuelve a añadir esta copia (o actívala cuando se te pida)."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ative o TextToType em Ajustes do Sistema → Privacidade e Segurança → Acessibilidade.\n\nSe ele já estiver ativado lá, esse item pertence a uma versão anterior do app. Selecione-o, remova-o com o botão “−” e adicione esta cópia novamente (ou ative-a quando solicitado)."
+          }
         }
       }
     },
@@ -399,6 +1335,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zwischenablage eintippen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisir le presse-papiers"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digita appunti"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escribir portapapeles"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digitar Área de Transferência"
           }
         }
       }
@@ -410,6 +1370,30 @@
             "state" : "translated",
             "value" : "Tippen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisie"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digitazione"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escritura"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digitação"
+          }
         }
       }
     },
@@ -419,6 +1403,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versione %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión %@"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versão %@"
           }
         }
       }
@@ -430,6 +1438,30 @@
             "state" : "translated",
             "value" : "Auf GitHub anzeigen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir sur GitHub"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vedi su GitHub"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver en GitHub"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver no GitHub"
+          }
         }
       }
     },
@@ -440,12 +1472,60 @@
             "state" : "translated",
             "value" : "Tippen für"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisir pour"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digita per"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escribir para"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digitar para"
+          }
         }
       }
     },
     "Mac" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac"
+          }
+        },
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mac"
@@ -460,6 +1540,30 @@
             "state" : "translated",
             "value" : "Windows-PC"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PC Windows"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PC Windows"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PC con Windows"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PC com Windows"
+          }
         }
       }
     },
@@ -469,6 +1573,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jedes System (Unicode)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout système (Unicode)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qualsiasi sistema (Unicode)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cualquier sistema (Unicode)"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qualquer sistema (Unicode)"
           }
         }
       }
@@ -480,6 +1608,30 @@
             "state" : "translated",
             "value" : "Drückt die Tasten deines Mac-Tastaturlayouts. Für Mac-Apps und entfernte Macs."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuie sur les touches de la disposition de clavier de votre Mac. Pour les apps Mac et les Mac distants."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preme i tasti del layout di tastiera del tuo Mac. Per le app Mac e i Mac remoti."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pulsa las teclas de la distribución de teclado de tu Mac. Para apps de Mac y Mac remotos."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pressiona as teclas do layout de teclado do seu Mac. Para apps do Mac e Macs remotos."
+          }
         }
       }
     },
@@ -490,6 +1642,30 @@
             "state" : "translated",
             "value" : "Tippt Zeichen auf der AltGr-Ebene, etwa @ auf einer deutschen Tastatur, so wie Windows sie erwartet. Für Windows per Remotedesktop oder in einer VM."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisit les caractères du niveau AltGr, comme @ sur un clavier français, de la manière attendue par Windows. Pour Windows via Bureau à distance ou dans une machine virtuelle."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digita i caratteri del livello AltGr, come @ su una tastiera italiana, nel modo previsto da Windows. Per Windows tramite Desktop remoto o in una macchina virtuale."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escribe los caracteres del nivel AltGr, como @ en un teclado español, tal como los espera Windows. Para Windows mediante Escritorio remoto o en una máquina virtual."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digita os caracteres da camada AltGr, como @ em um teclado alemão, do jeito que o Windows espera. Para Windows via Área de Trabalho Remota ou em uma máquina virtual."
+          }
         }
       }
     },
@@ -499,6 +1675,166 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sendet jedes Zeichen als Text statt als Tastendruck, das Tastaturlayout spielt also keine Rolle. Funktioniert in Mac-Apps und in Remote-Clients, die Text weitergeben. In VMs, Konsolen und Installationsbildschirmen kann nichts oder Falsches ankommen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoie chaque caractère sous forme de texte plutôt que comme une frappe de touche : la disposition du clavier n’a donc pas d’importance. Fonctionne dans les apps Mac et dans les clients distants qui transmettent le texte. Dans les machines virtuelles, les consoles et les écrans d’installation, rien ou des lettres erronées peuvent apparaître."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invia ogni carattere come testo invece che come pressione di tasto, quindi il layout di tastiera non conta. Funziona nelle app Mac e nei client remoti che trasmettono il testo. In macchine virtuali, console e schermate di installazione potrebbe non arrivare nulla o arrivare lettere sbagliate."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envía cada carácter como texto en lugar de como pulsación de tecla, así que la distribución del teclado no importa. Funciona en apps de Mac y en clientes remotos que transmiten el texto. En máquinas virtuales, consolas y pantallas de instalación puede que no llegue nada o lleguen letras incorrectas."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envia cada caractere como texto em vez de um toque de tecla, então o layout do teclado não importa. Funciona em apps do Mac e em clientes remotos que repassam o texto. Em máquinas virtuais, consoles e telas de instalação, pode não aparecer nada ou aparecerem letras erradas."
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprache"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Langue"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lingua"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idioma"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idioma"
+          }
+        }
+      }
+    },
+    "System default" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systemstandard"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglage du système"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predefinita di sistema"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predeterminado del sistema"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padrão do sistema"
+          }
+        }
+      }
+    },
+    "Restart TextToType to use the new language." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starte TextToType neu, um die neue Sprache zu verwenden."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redémarrez TextToType pour utiliser la nouvelle langue."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riavvia TextToType per usare la nuova lingua."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reinicia TextToType para usar el nuevo idioma."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reinicie o TextToType para usar o novo idioma."
+          }
+        }
+      }
+    },
+    "Restart Now" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jetzt neu starten"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redémarrer maintenant"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riavvia ora"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiniciar ahora"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiniciar Agora"
           }
         }
       }

@@ -51,6 +51,33 @@ enum TargetSystem: String, CaseIterable, Identifiable {
     }
 }
 
+/// Language of the app's UI. Stored as the app's own `AppleLanguages` default,
+/// which macOS reads at launch, so a change takes effect after a restart.
+enum AppLanguage: String, CaseIterable, Identifiable {
+    case system = ""
+    case english = "en"
+    case german = "de"
+    case french = "fr"
+    case italian = "it"
+    case spanish = "es"
+    case portugueseBrazil = "pt-BR"
+
+    var id: String { rawValue }
+
+    /// Languages are shown in their own language, so they can be found from any UI language.
+    var title: String {
+        switch self {
+        case .system: String(localized: "System default")
+        case .english: "English"
+        case .german: "Deutsch"
+        case .french: "Français"
+        case .italian: "Italiano"
+        case .spanish: "Español"
+        case .portugueseBrazil: "Português (Brasil)"
+        }
+    }
+}
+
 extension NSPasteboard.PasteboardType {
     /// Set by password managers (KeePassXC, 1Password, …) on secrets they copy. See nspasteboard.org.
     static let concealed = NSPasteboard.PasteboardType("org.nspasteboard.ConcealedType")
@@ -65,6 +92,7 @@ final class AppState: ObservableObject {
         static let keyDelay = "keyDelayMs"
         static let clipboardClearing = "clipboardClearing"
         static let targetSystem = "targetSystem"
+        static let appleLanguages = "AppleLanguages"
     }
 
     @Published var shortcut: Shortcut? {
@@ -86,6 +114,23 @@ final class AppState: ObservableObject {
     @Published var targetSystem: TargetSystem {
         didSet { defaults.set(targetSystem.rawValue, forKey: Keys.targetSystem) }
     }
+
+    @Published var language: AppLanguage {
+        didSet {
+            if language == .system {
+                defaults.removeObject(forKey: Keys.appleLanguages)
+            } else {
+                defaults.set([language.rawValue], forKey: Keys.appleLanguages)
+            }
+        }
+    }
+
+    /// The language the running app was started with. A different `language` needs a restart.
+    let launchLanguage: AppLanguage
+
+    /// Launch argument for the new instance started by `restart()`.
+    private static let relaunchArgument = "--relaunched"
+    static var wasRelaunched: Bool { CommandLine.arguments.contains(relaunchArgument) }
 
     @Published private(set) var isTyping = false
     @Published private(set) var hotKeyError: String?
@@ -110,9 +155,19 @@ final class AppState: ObservableObject {
             .flatMap(ClipboardClearing.init(rawValue:)) ?? .passwords
         targetSystem = defaults.string(forKey: Keys.targetSystem)
             .flatMap(TargetSystem.init(rawValue:)) ?? .unicode
+        // Only the app's own domain: `defaults.array` would also return the system-wide languages.
+        let appDomain = Bundle.main.bundleIdentifier.flatMap(UserDefaults.standard.persistentDomain(forName:))
+        let storedLanguage = (appDomain?[Keys.appleLanguages] as? [String])?.first
+            .flatMap(AppLanguage.init(rawValue:)) ?? .system
+        language = storedLanguage
+        launchLanguage = storedLanguage
 
         hotKeys.onPress = { [weak self] in self?.toggleTyping(fromHotKey: true) }
-        registerHotKey()
+        if Self.wasRelaunched {
+            registerHotKeyAfterPreviousInstanceQuits()
+        } else {
+            registerHotKey()
+        }
         refreshStatus()
 
         // Keep permission / login-item status fresh (e.g. after the user flips it in System Settings).
@@ -194,6 +249,20 @@ final class AppState: ObservableObject {
         }
     }
 
+    /// After `restart()`, the old instance may still hold the shortcut for a moment.
+    private func registerHotKeyAfterPreviousInstanceQuits(deadline: Date = Date().addingTimeInterval(5)) {
+        let me = ProcessInfo.processInfo.processIdentifier
+        let others = NSRunningApplication.runningApplications(withBundleIdentifier: Bundle.main.bundleIdentifier ?? "")
+            .filter { $0.processIdentifier != me && !$0.isTerminated }
+        if others.isEmpty || Date() > deadline {
+            registerHotKey()
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+                self?.registerHotKeyAfterPreviousInstanceQuits(deadline: deadline)
+            }
+        }
+    }
+
     /// Temporarily disable the hotkey (while recording a new one).
     func suspendHotKey() {
         hotKeys.unregister()
@@ -246,6 +315,19 @@ final class AppState: ObservableObject {
     func openAccessibilitySettings() {
         if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility") {
             NSWorkspace.shared.open(url)
+        }
+    }
+
+    /// Starts a new instance (which reopens Settings) and quits this one, e.g. to apply a new language.
+    func restart() {
+        job?.cancel()
+        let configuration = NSWorkspace.OpenConfiguration()
+        configuration.createsNewApplicationInstance = true
+        configuration.arguments = [Self.relaunchArgument]
+        NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: configuration) { _, error in
+            DispatchQueue.main.async {
+                if error == nil { NSApp.terminate(nil) } else { NSSound.beep() }
+            }
         }
     }
 
