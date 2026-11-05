@@ -1,0 +1,33 @@
+# Regenerate TextToType.xcodeproj with:  xcodegen generate
+name: TextToType
+options:
+  bundleIdPrefix: com.toepper.rocks
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "2"
+targets:
+  TextToType:
+    type: application
+    platform: macOS
+    sources:
+      - TextToType
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.toepper.rocks.TextToType
+        PRODUCT_NAME: TextToType
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_LSUIElement: YES
+        INFOPLIST_KEY_CFBundleDisplayName: TextToType
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        ENABLE_HARDENED_RUNTIME: YES
+        ENABLE_APP_SANDBOX: YES
+        CODE_SIGN_ENTITLEMENTS: TextToType/TextToType.entitlements
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: Apple Development
+        DEVELOPMENT_TEAM: UE57845B3R
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
