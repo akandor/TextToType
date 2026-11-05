@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>TextToType: Einstellungen</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .copy { top: 115px; }
+  h1 { font-size: 72px; }
+
+  .features { list-style: none; margin-top: 38px; display: grid; gap: 22px; }
+  .features li { display: flex; gap: 16px; align-items: flex-start; font-size: 21px; line-height: 1.35; font-weight: 500; max-width: 480px; }
+  .features li b { display: block; font-weight: 700; font-size: 22px; margin-bottom: 2px; }
+  .features .ic {
+    flex: none; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
+    background: rgba(255,255,255,.95); color: #e2550a; font-size: 21px; font-weight: 700;
+    box-shadow: 0 6px 16px rgba(110, 30, 0, .25);
+  }
+  .features span { color: rgba(255,255,255,.9); }
+
+  /* Settings window, drawn at its real size and scaled up for legibility */
+  .settings {
+    left: 770px; top: 95px; width: 460px;
+    transform: scale(1.32); transform-origin: top left;
+    background: #1f1f21;
+  }
+  .settings .titlebar { background: #2a2a2c; height: 34px; border-bottom-color: #161617; }
+  .settings .titlebar i { width: 12px; height: 12px; }
+  .settings .titlebar i:nth-child(2), .settings .titlebar i:nth-child(3) { background: #4a4a4d; }
+  .settings .titlebar .title { font-size: 13px; color: #dcdcdf; }
+
+  .form { padding: 14px 20px 20px; font-size: 13px; color: #e9e9eb; }
+  .group { background: #2a2a2d; border-radius: 9px; box-shadow: inset 0 0 0 .5px rgba(255,255,255,.07); }
+  .row { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; min-height: 40px; }
+  .row + .row { border-top: 1px solid rgba(255,255,255,.07); }
+  .caption { font-size: 11px; line-height: 1.4; color: #98989d; padding: 0 12px 10px; }
+  .row.with-caption { padding-bottom: 8px; }
+  .section-title { font-size: 13px; font-weight: 700; margin: 20px 0 8px 4px; }
+
+  .recorder { display: flex; align-items: center; gap: 8px; }
+  .recorder .btn {
+    min-width: 144px; text-align: center; padding: 4px 12px; border-radius: 6px;
+    background: #48484c; box-shadow: inset 0 .5px 0 rgba(255,255,255,.18), 0 .5px 1px rgba(0,0,0,.4);
+    font-size: 13px; letter-spacing: 1px;
+  }
+  .recorder .x { width: 14px; height: 14px; border-radius: 50%; background: #6e6e73; color: #2a2a2d; font-size: 10px; font-weight: 800; display: grid; place-items: center; }
+
+  .slider { display: flex; align-items: center; gap: 12px; }
+  .track { position: relative; width: 168px; height: 4px; border-radius: 2px; background: #4a4a4e; }
+  .track .fill { position: absolute; left: 0; top: 0; bottom: 0; width: 15%; background: #0a84ff; border-radius: 2px; }
+  .track .knob { position: absolute; left: 15%; top: 50%; width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.5); }
+  .ms { width: 44px; text-align: right; color: #c7c7cc; font-variant-numeric: tabular-nums; }
+
+  .popup {
+    display: flex; align-items: center; gap: 8px; padding: 3px 6px 3px 10px; border-radius: 6px;
+    background: #48484c; box-shadow: inset 0 .5px 0 rgba(255,255,255,.18), 0 .5px 1px rgba(0,0,0,.4);
+  }
+  .popup .chev {
+    width: 16px; height: 16px; border-radius: 4px; background: #0a84ff; color: #fff;
+    font-size: 8px; line-height: 7px; display: grid; place-items: center; text-align: center;
+  }
+  .group .caption + .row { border-top: 1px solid rgba(255,255,255,.07); }
+
+  .toggle { width: 38px; height: 22px; border-radius: 11px; background: #0a84ff; position: relative; }
+  .toggle::after { content: ""; position: absolute; right: 2px; top: 2px; width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.35); }
+
+  .perm { display: flex; align-items: center; gap: 8px; }
+  .perm .ok { width: 16px; height: 16px; border-radius: 50%; background: #30d158; color: #fff; font-size: 10px; font-weight: 900; display: grid; place-items: center; }
+</style>
+</head>
+<body>
+
+  <div class="copy">
+    <div class="app-id"><img src="AppIcon.png" alt=""><span>TextToType</span></div>
+    <h1>Dein Kürzel.<br>Dein Tempo.</h1>
+    <ul class="features">
+      <li><div class="ic">⌘</div><div><b>Jedes globale Kürzel</b><span>Nimm die Tastenkombination auf, die zu dir passt. Erneut drücken stoppt.</span></div></li>
+      <li><div class="ic">⏱</div><div><b>Einstellbares Tipptempo</b><span>Langsamer für träge Remote-Sitzungen und VMs.</span></div></li>
+      <li><div class="ic"><svg width="20" height="22" viewBox="0 0 20 22" aria-hidden="true"><rect x="2" y="9" width="16" height="12" rx="3" fill="currentColor"/><path d="M5.5 9V6.5a4.5 4.5 0 0 1 9 0V9" fill="none" stroke="currentColor" stroke-width="2.6"/></svg></div><div><b>Passwort-Manager-freundlich</b><span>Löscht kopierte Passwörter aus der Zwischenablage, sobald sie eingetippt sind.</span></div></li>
+      <li><div class="ic">↻</div><div><b>Immer bereit</b><span>Wohnt in der Menüleiste und startet bei der Anmeldung.</span></div></li>
+    </ul>
+  </div>
+
+  <div class="window settings">
+    <div class="titlebar"><i></i><i></i><i></i><div class="title">TextToType-Einstellungen</div></div>
+    <div class="form">
+      <div class="group">
+        <div class="row with-caption">
+          <span>Tastenkombination</span>
+          <div class="recorder"><div class="btn">⌃⌥⌘V</div><div class="x">✕</div></div>
+        </div>
+        <div class="caption">Drücke die Tastenkombination, um den Inhalt der Zwischenablage in die aktive App einzutippen. Drücke sie erneut, um den Vorgang zu beenden.</div>
+      </div>
+
+      <div class="section-title">Tippen</div>
+      <div class="group">
+        <div class="row with-caption">
+          <span>Verzögerung pro Taste</span>
+          <div class="slider"><div class="track"><div class="fill"></div><div class="knob"></div></div><span class="ms">15 ms</span></div>
+        </div>
+        <div class="caption">Erhöhe diesen Wert, wenn die Zielanwendung (z.&nbsp;B. ein Remote-Desktop oder eine virtuelle Maschine) Zeichen auslässt.</div>
+        <div class="row with-caption">
+          <span>Zwischenablage nach der Eingabe löschen</span>
+          <div class="popup">Nur Passwörter<div class="chev">▴<br>▾</div></div>
+        </div>
+        <div class="caption">„Nur Passwörter“ löscht Text, den ein Passwort-Manager als Passwort markiert hat. Die Zwischenablage bleibt unberührt, wenn du während der Eingabe etwas anderes kopiert hast oder die Eingabe vorzeitig abgebrochen hast.</div>
+      </div>
+
+      <div class="section-title">Allgemein</div>
+      <div class="group">
+        <div class="row"><span>Bei der Anmeldung starten</span><div class="toggle"></div></div>
+      </div>
+
+      <div class="section-title">Berechtigungen</div>
+      <div class="group">
+        <div class="row"><div class="perm"><div class="ok">✓</div>Zugriff auf Bedienungshilfen erteilt</div></div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
