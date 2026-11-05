@@ -1,6 +1,7 @@
 # TextToType
 
 [![Download on the Mac App Store](https://img.shields.io/badge/Mac_App_Store-Download-0D96F6?logo=apple&logoColor=white)](https://apps.apple.com/app/id6831039920)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-Support-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/toepper.rocks)
 
 ![TextToType](AppStore/Screenshots/01-type-anywhere.png)
 
