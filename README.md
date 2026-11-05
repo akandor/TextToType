@@ -1,5 +1,7 @@
 # TextToType
 
+[![Download on the Mac App Store](https://img.shields.io/badge/Mac_App_Store-Download-0D96F6?logo=apple&logoColor=white)](https://apps.apple.com/app/id6831039920)
+
 ![TextToType](AppStore/Screenshots/01-type-anywhere.png)
 
 A tiny, free and open source macOS menu bar app that **types your clipboard** with real keystrokes, which is handy where paste doesn't work: remote desktops, VMs, VNC/Citrix sessions, server and installer consoles, and web forms that block paste.
