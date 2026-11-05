@@ -2,6 +2,29 @@ import AppKit
 import Carbon.HIToolbox
 import ServiceManagement
 
+/// When to clear the clipboard after the whole text has been typed.
+enum ClipboardClearing: String, CaseIterable, Identifiable {
+    case never
+    /// Only text a password manager marked as concealed (`org.nspasteboard.ConcealedType`).
+    case passwords
+    case always
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .never: "Never"
+        case .passwords: "Only passwords"
+        case .always: "Always"
+        }
+    }
+}
+
+extension NSPasteboard.PasteboardType {
+    /// Set by password managers (KeePassXC, 1Password, …) on secrets they copy. See nspasteboard.org.
+    static let concealed = NSPasteboard.PasteboardType("org.nspasteboard.ConcealedType")
+}
+
 /// Central app state: settings, global hotkey, typing jobs, permissions.
 final class AppState: ObservableObject {
     static let shared = AppState()
@@ -9,6 +32,7 @@ final class AppState: ObservableObject {
     private enum Keys {
         static let shortcut = "shortcut"
         static let keyDelay = "keyDelayMs"
+        static let clipboardClearing = "clipboardClearing"
     }
 
     @Published var shortcut: Shortcut? {
@@ -21,6 +45,10 @@ final class AppState: ObservableObject {
     /// Pause between typed characters, in milliseconds.
     @Published var keyDelayMs: Double {
         didSet { defaults.set(keyDelayMs, forKey: Keys.keyDelay) }
+    }
+
+    @Published var clipboardClearing: ClipboardClearing {
+        didSet { defaults.set(clipboardClearing.rawValue, forKey: Keys.clipboardClearing) }
     }
 
     @Published private(set) var isTyping = false
@@ -42,6 +70,8 @@ final class AppState: ObservableObject {
             shortcut = .default
         }
         keyDelayMs = defaults.object(forKey: Keys.keyDelay) as? Double ?? 10
+        clipboardClearing = defaults.string(forKey: Keys.clipboardClearing)
+            .flatMap(ClipboardClearing.init(rawValue:)) ?? .passwords
 
         hotKeys.onPress = { [weak self] in self?.toggleTyping(fromHotKey: true) }
         registerHotKey()
@@ -68,10 +98,13 @@ final class AppState: ObservableObject {
             showAccessibilityAlert()
             return
         }
-        guard let text = NSPasteboard.general.string(forType: .string), !text.isEmpty else {
+        let pasteboard = NSPasteboard.general
+        guard let text = pasteboard.string(forType: .string), !text.isEmpty else {
             NSSound.beep()
             return
         }
+        let changeCount = pasteboard.changeCount
+        let isConcealed = pasteboard.types?.contains(.concealed) ?? false
 
         let job = TypingJob()
         self.job = job
@@ -83,10 +116,27 @@ final class AppState: ObservableObject {
             startDelay: fromHotKey ? 0.1 : 0.4,
             job: job
         ) { [weak self] in
-            guard let self, self.job === job else { return }
+            guard let self else { return }
+            if !job.isCancelled {
+                self.clearClipboardAfterTyping(changeCount: changeCount, isConcealed: isConcealed)
+            }
+            guard self.job === job else { return }
             self.job = nil
             self.isTyping = false
         }
+    }
+
+    /// Clears the clipboard per the user's setting, unless something new was copied while typing.
+    private func clearClipboardAfterTyping(changeCount: Int, isConcealed: Bool) {
+        let shouldClear: Bool
+        switch clipboardClearing {
+        case .never: shouldClear = false
+        case .passwords: shouldClear = isConcealed
+        case .always: shouldClear = true
+        }
+        let pasteboard = NSPasteboard.general
+        guard shouldClear, pasteboard.changeCount == changeCount else { return }
+        pasteboard.clearContents()
     }
 
     // MARK: Hotkey

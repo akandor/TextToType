@@ -7,6 +7,7 @@ A tiny, free and open source macOS menu bar app that **types your clipboard** wi
 - Global shortcut you can change (default **⌃⌥⌘V**). Press it again to stop typing.
 - Uses your current keyboard layout's real key codes (including ⇧/⌥ combinations). Characters that can't be reached with a single key fall back to Unicode input.
 - Adjustable delay per key, for remote sessions that drop characters.
+- Works with password managers: copy a password, press the shortcut. By default the clipboard is cleared afterwards when the password manager marked the text as a password (`org.nspasteboard.ConcealedType`), or always if you prefer.
 - Lives in the menu bar and can launch at login.
 - Sandboxed, with no network access and no data collection (see [PRIVACY.md](PRIVACY.md)).
 
@@ -15,6 +16,18 @@ A tiny, free and open source macOS menu bar app that **types your clipboard** wi
 1. Copy some text.
 2. Click into the window where it should be typed.
 3. Press your shortcut (default ⌃⌥⌘V). Press it again to stop.
+
+### With a password manager
+
+Copy the password in KeePassXC, Bitwarden, 1Password etc., then press the shortcut. TextToType reads the clipboard once when typing starts, so the password manager's clipboard timeout doesn't cut typing short, even with a long delay per key.
+
+Under **Settings → Typing → Clear clipboard after typing** choose:
+
+- **Only passwords** (default): clears the clipboard if the password manager marked the text as concealed. Not every password manager does this; if yours doesn't, use **Always**.
+- **Always**: clears the clipboard after every completed typing run.
+- **Never**: leaves the clipboard untouched.
+
+The clipboard is never cleared if you copied something else while typing, or if you stopped typing early.
 
 ## Build
 

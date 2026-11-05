@@ -71,6 +71,15 @@ struct SettingsView: View {
                 Text("Increase this if the target app (e.g. a remote desktop or VM) drops characters.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
+
+                Picker("Clear clipboard after typing", selection: $state.clipboardClearing) {
+                    ForEach(ClipboardClearing.allCases) { option in
+                        Text(option.title).tag(option)
+                    }
+                }
+                Text("“Only passwords” clears text that a password manager marked as a password. The clipboard is left alone if you copied something else while typing, or if you stopped typing early.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
             }
 
             Section("General") {
